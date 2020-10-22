@@ -1,5 +1,6 @@
 package ru.geekbrains.lesson3;
 
+import java.util.Random;
 import java.util.Scanner;
 
 public class Main {
@@ -37,9 +38,10 @@ public class Main {
 
     public static void guessNumber() {
         Scanner scanner = new Scanner(System.in);
+        Random random = new Random();
         do {
             System.out.println("Guess the number from 0 to 9");
-            int hiddenNumber = (int) (Math.random() * 9);
+            int hiddenNumber = random.nextInt(9);
             for (int i = 0; i < 3; i++) {
                 System.out.print("Insert the number: ");
                 int userInput = scanner.nextInt();
@@ -59,15 +61,16 @@ public class Main {
                 "melon", "leak", "kiwi", "mango", "mushroom", "nut", "olive", "pea",
                 "peanut", "pear", "pepper", "pineapple", "pumpkin", "potato"};
         Scanner scanner = new Scanner(System.in);
+        Random random = new Random();
         System.out.println("Press enter to exit");
-        String hiddenFruit = words[(int) (Math.random() * words.length)];
+        String hiddenFruit = words[random.nextInt(words.length)];
         do {
             System.out.print("Enter the hidden fruit: ");
             String userInput = scanner.nextLine();
             if (userInput.equals("")) break;
             else if (userInput.equals(hiddenFruit)) {
                 System.out.println("You win");
-                hiddenFruit = words[(int) (Math.random() * words.length)];
+                hiddenFruit = words[random.nextInt(words.length)];
                 continue;
             }
             char[] tempBuffer = new char[hiddenFruit.length()];
