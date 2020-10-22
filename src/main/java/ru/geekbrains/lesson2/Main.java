@@ -58,49 +58,43 @@ public class Main {
     }
 
     public static void invertArray() {
-        int[] arr = {1, 0, 1, 0, 0, 1};
-        for (int i = 0; i < arr.length; i++) {
-            arr[i] = arr[i] == 0 ? 1 : 0;
+        int[] array = {1, 0, 1, 0, 0, 1};
+        for (int i = 0; i < array.length; i++) {
+            array[i] = array[i] == 0 ? 1 : 0;
         }
-        for (int value : arr) {
-            System.out.print(value + " ");
-        }
-        System.out.println("\n");
+        printArray(array);
+        System.out.println();
     }
 
     public static void fillArray() {
-        int[] arr = new int[8];
-        for (int i = 0; i < arr.length; i++) {
-            arr[i] = i * 3;
+        int[] array = new int[8];
+        for (int i = 0; i < array.length; i++) {
+            array[i] = i * 3;
         }
-        for (int value : arr) {
-            System.out.print(value + " ");
-        }
-        System.out.println("\n");
+        printArray(array);
+        System.out.println();
     }
 
     public static void changeArray() {
-        int[] arr = {1, 5, 3, 2, 11, 4, 5, 2, 4, 8, 9, 1};
-        for (int i = 0; i < arr.length; i++) {
-            if (arr[i] < 6) {
-                arr[i] *= 2;
+        int[] array = {1, 5, 3, 2, 11, 4, 5, 2, 4, 8, 9, 1};
+        for (int i = 0; i < array.length; i++) {
+            if (array[i] < 6) {
+                array[i] *= 2;
             }
         }
-        for (int value : arr) {
-            System.out.print(value + " ");
-        }
-        System.out.println("\n");
+        printArray(array);
+        System.out.println();
     }
 
     public static void fillDiagonal() {
-        int[][] arr = new int[5][5];
-        for (int i = 0; i < arr.length; i++) {
-            arr[i][i] = 1;
-            arr[i][arr.length - i - 1] = 1;
+        int[][] array = new int[5][5];
+        for (int i = 0; i < array.length; i++) {
+            array[i][i] = 1;
+            array[i][array.length - i - 1] = 1;
         }
-        for (int[] ints : arr) {
-            for (int anInt : ints) {
-                System.out.print(anInt + " ");
+        for (int[] items : array) {
+            for (int item : items) {
+                System.out.print(item + " ");
             }
             System.out.println();
         }
@@ -108,10 +102,10 @@ public class Main {
     }
 
     public static void searchMaxMin() {
-        int[] arr = {1, 5, 8, 9, 21, 2, 6, 19, 4, 55};
-        int max = arr[0];
-        int min = arr[0];
-        for (int j : arr) {
+        int[] array = {1, 5, 8, 9, 21, 2, 6, 19, 4, 55};
+        int max = array[0];
+        int min = array[0];
+        for (int j : array) {
             if (j > max) {
                 max = j;
             } else {
@@ -121,44 +115,44 @@ public class Main {
         System.out.println("Max: " + max + " Min: " + min + "\n");
     }
 
-    public static boolean checkBalance(int[] arrParam) {
+    public static boolean checkBalance(int[] array) {
         int lSum, rSum;
-        for (int i = 0; i < arrParam.length + 1; i++) {
+        for (int i = 0; i < array.length + 1; i++) {
             lSum = 0;
             rSum = 0;
             for (int j = 0; j < i; j++) {
-                lSum += arrParam[j];
+                lSum += array[j];
             }
-            for (int j = i; j < arrParam.length; j++) {
-                rSum += arrParam[j];
+            for (int j = i; j < array.length; j++) {
+                rSum += array[j];
             }
             if (lSum == rSum) return true;
         }
         return false;
     }
 
-    public static void shiftOfNumbers(int[] arrParam, int n) {
+    public static void shiftOfNumbers(int[] array, int n) {
         if (n > 0) {
-            for (int x = 0; x < n; x++) {
-                int buf = arrParam[arrParam.length - 1];
-                System.arraycopy(arrParam, 0, arrParam, 1, arrParam.length - 1);
-                arrParam[0] = buf;
-                printArray(arrParam);
+            for (int i = 0; i < n; i++) {
+                int buffer = array[array.length - 1];
+                System.arraycopy(array, 0, array, 1, array.length - 1);
+                array[0] = buffer;
+                printArray(array);
             }
         } else if (n < 0) {
-            for (int x = 0; x > n; x--) {
-                int buf = arrParam[0];
-                System.arraycopy(arrParam, 1, arrParam, 0, arrParam.length - 1);
-                arrParam[arrParam.length - 1] = buf;
-                printArray(arrParam);
+            for (int i = 0; i > n; i--) {
+                int buffer = array[0];
+                System.arraycopy(array, 1, array, 0, array.length - 1);
+                array[array.length - 1] = buffer;
+                printArray(array);
             }
         }
-        System.out.println();
     }
 
     private static void printArray(int[] array) {
         for (int value : array) {
             System.out.print(value + " ");
         }
+        System.out.println();
     }
 }
