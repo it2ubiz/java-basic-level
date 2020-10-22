@@ -41,16 +41,19 @@ public class Main {
         Random random = new Random();
         do {
             System.out.println("Guess the number from 0 to 9");
+            boolean checkWin = false;
             int hiddenNumber = random.nextInt(9);
             for (int i = 0; i < 3; i++) {
-                System.out.print("Insert the number: ");
+                System.out.print("Attempt: " + (i + 1) + "/3 - Insert the number: ");
                 int userInput = scanner.nextInt();
                 if (userInput == hiddenNumber) {
                     System.out.println("You win");
+                    checkWin = true;
                     break;
                 }
                 System.out.println(userInput > hiddenNumber ? "Your number is greater than expected" : "Your number is less than expected");
             }
+            if (!checkWin) System.out.println("You lose");
             System.out.print("Do you want to repeat the game again? 1 - yes / 0 - no: ");
         } while (scanner.nextInt() == 1);
     }
