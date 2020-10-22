@@ -20,9 +20,13 @@ public class Main {
                     "apricot", "avocado", "broccoli", "carrot", "cherry", "garlic", "grape",
                     melon", "leak", "kiwi", "mango", "mushroom", "nut", "olive", "pea",
                     "peanut", "pear", "pepper", "pineapple", "pumpkin", "potato"};
-                    При запуске программы компьютер загадывает слово,запрашивает ответ у пользователя,
+                    При запуске программы компьютер загадывает слово, запрашивает ответ у пользователя,
                     сравнивает его с загаданным словом и сообщает правильно ли ответил пользователь.
-                    Если слово не угадано, компьютер показывает буквы которые стоят на своих местах. */
+                    Если слово не угадано, компьютер показывает буквы которые стоят на своих местах.
+                    apple – загаданное apricot - ответ игрока ap############# (15 символов, чтобы пользователь не мог узнать длину слова)
+                    Для сравнения двух слов посимвольно, можно пользоваться: String str = "apple";
+                    str.charAt(0); - метод, вернет char, который стоит в слове str на первой позиции
+                    Играем до тех пор, пока игрок не отгадает слово Используем только маленькие буквы */
                     guessFruit();
                     break;
                 case 3:
@@ -56,24 +60,22 @@ public class Main {
                 "peanut", "pear", "pepper", "pineapple", "pumpkin", "potato"};
         Scanner scanner = new Scanner(System.in);
         System.out.println("Press enter to exit");
+        String hiddenFruit = words[(int) (Math.random() * words.length)];
         do {
-            String hiddenFruit = words[(int) (Math.random() * words.length)];
             System.out.print("Enter the hidden fruit: ");
             String userInput = scanner.nextLine();
             if (userInput.equals("")) break;
             else if (userInput.equals(hiddenFruit)) {
                 System.out.println("You win");
+                hiddenFruit = words[(int) (Math.random() * words.length)];
+                continue;
             }
-            char[] userInputChars = userInput.toCharArray();
+            char[] tempBuffer = new char[hiddenFruit.length()];
             for (int i = 0; i < hiddenFruit.length(); i++) {
                 if (i >= userInput.length()) break;
-                if (hiddenFruit.charAt(i) != userInputChars[i]) {
-                    userInputChars[i] = '#';
-                }
+                tempBuffer[i] = hiddenFruit.charAt(i) != userInput.charAt(i) ? '#' : userInput.charAt(i);
             }
-            System.out.println("Correct answer: " + hiddenFruit);
-            hiddenFruit = String.valueOf(userInputChars);
-            System.out.println(hiddenFruit + "###############");
+            System.out.println(String.valueOf(tempBuffer) + "###############");
         } while (true);
     }
 }
