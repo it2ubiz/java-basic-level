@@ -5,11 +5,11 @@ public class Person {
     private String lastName;
     private String position;
     private String email;
-    private int phoneNumber;
+    private String phoneNumber;
     private int salary;
     private int age;
 
-    public Person(String firstName, String lastName, String position, String email, int phoneNumber, int salary, int age) {
+    public Person(String firstName, String lastName, String position, String email, String phoneNumber, int salary, int age) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.position = position;
@@ -55,11 +55,11 @@ public class Person {
         this.email = email;
     }
 
-    public int getPhoneNumber() {
+    public String getPhoneNumber() {
         return phoneNumber;
     }
 
-    public void setPhoneNumber(int phoneNumber) {
+    public void setPhoneNumber(String phoneNumber) {
         this.phoneNumber = phoneNumber;
     }
 
