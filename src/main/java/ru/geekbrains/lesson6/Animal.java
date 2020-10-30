@@ -1,8 +1,5 @@
 package ru.geekbrains.lesson6;
 
-/**
- * Abstract class Animal
- */
 public abstract class Animal {
     protected int runLimit;
     protected int swimLimit;

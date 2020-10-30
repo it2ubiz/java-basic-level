@@ -1,8 +1,5 @@
 package ru.geekbrains.lesson6;
 
-/**
- * Class Animal
- */
 public class Cat extends Animal {
     protected Cat(int runLimit, float jumpLimit) {
         super(runLimit, 0, jumpLimit);
