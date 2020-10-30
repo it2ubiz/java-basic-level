@@ -3,6 +3,13 @@ package ru.geekbrains.lesson4;
 import java.util.Random;
 import java.util.Scanner;
 
+/**
+ * Java Core. Basic level. Lesson 4
+ * Tic-tac-toe in console
+ *
+ * @author Nika Zurbaevi
+ * @version dated October 25, 2020
+ */
 public class Main {
     private static final int SIZE = 3;
     private static final char PLAYER_DOT = 'X';
@@ -16,13 +23,6 @@ public class Main {
     private static final Random random = new Random();
 
     public static void main(String[] args) {
-
-        /* 1. Полностью разобраться с кодом, попробовать переписать с нуля, стараясь не подглядывать в методичку;
-        2. Переделать проверку победы, чтобы она не была реализована просто набором условий, например, с использованием циклов.
-        3. * Попробовать переписать логику проверки победы, чтобы она работала для поля 5х5 и количества фишек 4.
-        Очень желательно не делать это просто набором условий для каждой из возможных ситуаций;
-        4. *** Доработать искусственный интеллект, чтобы он мог блокировать ходы игрока. */
-
         initMap();
         printMap();
         while (true) {
