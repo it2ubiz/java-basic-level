@@ -1,8 +1,5 @@
 package ru.geekbrains.lesson5;
 
-/**
- * Class Person
- */
 public class Person {
     private String firstName;
     private String lastName;
