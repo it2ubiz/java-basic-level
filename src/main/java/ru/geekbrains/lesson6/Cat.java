@@ -1,10 +1,16 @@
 package ru.geekbrains.lesson6;
 
-
+/**
+ * Class Animal
+ */
 public class Cat extends Animal {
+    protected Cat(int runLimit, float jumpLimit) {
+        super(runLimit, 0, jumpLimit);
+    }
+
     @Override
     public boolean run(int length) {
-        return length < random.nextInt(400);
+        return length < runLimit;
     }
 
     @Override
@@ -14,6 +20,6 @@ public class Cat extends Animal {
 
     @Override
     public boolean jump(double height) {
-        return height < random.nextInt(4);
+        return height < jumpLimit;
     }
 }

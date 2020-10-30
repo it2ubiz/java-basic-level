@@ -1,9 +1,18 @@
 package ru.geekbrains.lesson6;
 
-import java.util.Random;
-
+/**
+ * Abstract class Animal
+ */
 public abstract class Animal {
-    protected Random random = new Random();
+    protected int runLimit;
+    protected int swimLimit;
+    protected float jumpLimit;
+
+    protected Animal(int runLimit, int swimLimit, float jumpLimit) {
+        this.runLimit = runLimit;
+        this.swimLimit = swimLimit;
+        this.jumpLimit = jumpLimit;
+    }
 
     public abstract boolean run(int length);
 
