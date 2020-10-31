@@ -7,7 +7,7 @@ public class Cat extends Animal {
 
     @Override
     public boolean run(int length) {
-        return length < runLimit;
+        return length <= runLimit;
     }
 
     @Override
@@ -17,6 +17,6 @@ public class Cat extends Animal {
 
     @Override
     public boolean jump(double height) {
-        return height < jumpLimit;
+        return height <= jumpLimit;
     }
 }
