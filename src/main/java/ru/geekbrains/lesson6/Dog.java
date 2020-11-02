@@ -1,7 +1,7 @@
 package ru.geekbrains.lesson6;
 
 public class Dog extends Animal {
-    protected Dog(int runLimit, int swimLimit, float jumpLimit) {
+    public Dog(int runLimit, int swimLimit, float jumpLimit) {
         super(runLimit, swimLimit, jumpLimit);
     }
 

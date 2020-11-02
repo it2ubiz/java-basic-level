@@ -12,7 +12,6 @@ public class Main {
                 new Dog(400, 5, 0.5F),
                 new Cat(250, 3)
         };
-
         for (Animal animal : animals) {
             System.out.println(animal.getClass().getSimpleName() +
                     "\nrun: " + animal.run(400) +

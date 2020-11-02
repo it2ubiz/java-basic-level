@@ -1,7 +1,7 @@
 package ru.geekbrains.lesson6;
 
 public class Cat extends Animal {
-    protected Cat(int runLimit, float jumpLimit) {
+    public Cat(int runLimit, float jumpLimit) {
         super(runLimit, 0, jumpLimit);
     }
 

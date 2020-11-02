@@ -5,7 +5,7 @@ public abstract class Animal {
     protected int swimLimit;
     protected float jumpLimit;
 
-    protected Animal(int runLimit, int swimLimit, float jumpLimit) {
+    Animal(int runLimit, int swimLimit, float jumpLimit) {
         this.runLimit = runLimit;
         this.swimLimit = swimLimit;
         this.jumpLimit = jumpLimit;
