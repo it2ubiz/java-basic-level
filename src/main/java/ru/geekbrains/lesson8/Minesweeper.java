@@ -44,6 +44,7 @@ public class Minesweeper extends JFrame {
 
         resetButton.addActionListener(new MyActionListener());
 
+        // Инициализируем все кнопки
         for (int i = 0; i < height; i++) {
             for (int j = 0; j < width; j++) {
                 boardButtons[i][j] = new JButton();
@@ -59,6 +60,9 @@ public class Minesweeper extends JFrame {
         return mainPanel;
     }
 
+    /**
+     * Устанавливает кусок соответствующего цвета в зависимости от количества мин окружающий его
+     */
     public void setColour(int row, int col) {
         switch (getPieceAt(row, col)) {
             case "1" -> boardButtons[row][col].setForeground(new Color(1, 0, 254));
@@ -72,12 +76,14 @@ public class Minesweeper extends JFrame {
         }
     }
 
+    /**
+     * Раскроет, что находится на доске в строке и столбце
+     */
     public void reveal(int row, int col) {
         if (isPiece(row, col, ' ')) {
             revealBlanks(row, col);
         } else {
-            if (isValid(row, col)
-                    && !isPiece(row, col, mine)) {
+            if (isValid(row, col) && !isPiece(row, col, mine)) {
                 boardButtons[row][col].setText(getPieceAt(row, col));
                 boardButtons[row][col].setBackground(background);
                 setColour(row, col);
@@ -85,6 +91,9 @@ public class Minesweeper extends JFrame {
         }
     }
 
+    /**
+     * Раскроет все мины на доске
+     */
     public void revealMines() {
         for (int i = 0; i < boardButtons.length; i++) {
             for (int j = 0; j < boardButtons[0].length; j++) {
@@ -92,8 +101,7 @@ public class Minesweeper extends JFrame {
                     if (!boardButtons[i][j].getText().equals(flag)) {
                         boardButtons[i][j].setForeground(Color.BLACK);
                         boardButtons[i][j].setText(getPieceAt(i, j));
-                    } else if (isPiece(i, j, mine) &&
-                            boardButtons[i][j].getText().equals(flag)) {
+                    } else if (isPiece(i, j, mine) && boardButtons[i][j].getText().equals(flag)) {
                         boardButtons[i][j].setForeground(Color.BLACK);
                         boardButtons[i][j].setBackground(Color.RED);
                     }
@@ -102,6 +110,9 @@ public class Minesweeper extends JFrame {
         }
     }
 
+    /**
+     * Раскроет все соседние пустые места и внешний слой подсказок
+     */
     public void revealBlanks(int row, int col) {
         if (!boardButtons[row][col].getBackground().equals(new JButton().getBackground())) {
             return;
@@ -120,6 +131,9 @@ public class Minesweeper extends JFrame {
         }
     }
 
+    /**
+     * @return Вернуть true, если игрок выиграл игру
+     */
     public boolean isWinner() {
         for (int i = 0; i < boardButtons.length; i++) {
             for (int j = 0; j < boardButtons[0].length; j++) {
@@ -131,6 +145,9 @@ public class Minesweeper extends JFrame {
         return true;
     }
 
+    /**
+     * Установить и/или снять флаг
+     */
     public void setFlag(int row, int col) {
         if (!boardButtons[row][col].getText().equals(flag)) {
             boardButtons[row][col].setText(flag);
@@ -140,21 +157,33 @@ public class Minesweeper extends JFrame {
         }
     }
 
+    /**
+     * @return Возвращает строковую кусок в позиции
+     */
     public boolean isPiece(int row, int col, char piece) {
         return isValid(row, col) && this.board[row][col] == piece;
     }
 
+    /**
+     * @return Вернет истину, если позиция находится за пределами доски
+     */
     public boolean isValid(int row, int col) {
         return row >= 0 && row < this.height && col >= 0 && col < this.width;
     }
 
+    /**
+     * Устанавливает и/или сбрасывает доску, наполняя ее минами и подсказками
+     */
     public void restart() {
         board = new char[this.height][this.width];
         int mineCount = 15;
+        // Сгенерируем индексы без дубликатов
         int[] mineIndexes = new Random().ints(0, (this.width * this.height - 1)).limit(mineCount).distinct().toArray();
+        // Заполнить доску минами (X)
         for (int mineIndex : mineIndexes) {
             this.board[Math.floorDiv(mineIndex, this.width)][mineIndex % this.width] = this.mine;
         }
+        // Добавить числа (подсказки)
         for (int i = 0; i < this.board.length; i++) {
             for (int j = 0; j < this.board[0].length; j++) {
                 if (this.board[i][j] != mine) {
@@ -169,8 +198,12 @@ public class Minesweeper extends JFrame {
         }
     }
 
+    /**
+     * @return Возвращает количество мин, окружающих позицию.
+     */
     public int nearbyMines(int row, int col) {
         int minesNearby = 0;
+        // Проверяет 8 окружающих квадратов и проверяет являются ли они фигурами
         for (int i = row - 1; i <= row + 1; i++) {
             for (int j = col - 1; j <= col + 1; j++) {
                 if (isPiece(i, j, this.mine)) {
@@ -187,8 +220,10 @@ public class Minesweeper extends JFrame {
 
     public class MyActionListener implements ActionListener {
         public void actionPerformed(ActionEvent e) {
+            // Когда нажата кнопка сброса
             if (e.getSource() == resetButton) {
                 restart();
+                // Возобновляем ходы
                 gameOver = false;
                 setTitle("Minesweeper");
                 for (JButton[] boardButton : boardButtons) {
@@ -198,18 +233,23 @@ public class Minesweeper extends JFrame {
                     }
                 }
             }
+            // При нажатии любой кнопки доски
             if (!gameOver) {
                 for (int i = 0; i < height; i++) {
                     for (int j = 0; j < width; j++) {
                         if (e.getSource() == boardButtons[i][j] && !boardButtons[i][j].getText().equals(flag)) {
+                            // Если мина нажата, показать их
                             if (isPiece(i, j, mine)) {
+                                // Блокируем ходы
                                 gameOver = true;
                                 revealMines();
                                 setTitle("YOU LOSE");
                                 boardButtons[i][j].setBackground(Color.RED);
+                                // Если кусок не был пустым, показать
                             } else {
                                 reveal(i, j);
                                 if (isWinner()) {
+                                    // Блокируем ходы
                                     gameOver = true;
                                     setTitle("YOU WIN");
                                 }
@@ -221,14 +261,17 @@ public class Minesweeper extends JFrame {
         }
     }
 
+    /**
+     * При щелчке правой кнопкой мыши по кнопке доски пометьте шахту
+     */
     public class MyMouseListener implements MouseListener {
         public void mousePressed(MouseEvent e) {
             if (!gameOver) {
                 for (int i = 0; i < boardButtons.length; i++) {
                     for (int j = 0; j < boardButtons[0].length; j++) {
-                        String buttonText = boardButtons[i][j].getText();
                         if (e.getButton() == 3 && e.getSource() == boardButtons[i][j]) {
-                            if (buttonText.equals("") || buttonText.equals(flag)) {
+                            // Пометить, если еще не помечено, в противном случае снять отметку
+                            if (boardButtons[i][j].getText().equals("") || boardButtons[i][j].getText().equals(flag)) {
                                 setFlag(i, j);
                             }
                         }
