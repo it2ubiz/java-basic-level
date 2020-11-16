@@ -18,11 +18,11 @@ ____
 Данный курс пройдет для укрепление материала.
 
 ## Основные темы курса:
-* [Урок 1.](https://github.com/zurbaevi/Java-Core.-Basic-level/tree/main/src/main/java/org/stepik/week1) Введение в Java
-* [Урок 2.](https://github.com/zurbaevi/Java-Core.-Basic-level/tree/main/src/main/java/org/stepik/week2) Базовый синтаксис Java
-* [Урок 3.](https://github.com/zurbaevi/Java-Core.-Basic-level/tree/main/src/main/java/org/stepik/week3) Объекты, классы и пакеты в Java
-* [Урок 4.](https://github.com/zurbaevi/Java-Core.-Basic-level/tree/main/src/main/java/org/stepik/week4) Обработка ошибок, исключения, отладка
-* [Урок 5.](https://github.com/zurbaevi/Java-Core.-Basic-level/tree/main/src/main/java/org/stepik/week5) Ввод-вывод, доступ к файловой системе
-* [Урок 6.](https://github.com/zurbaevi/Java-Core.-Basic-level/tree/main/src/main/java/org/stepik/week6) Generics. Collections. Streams
+* [Неделя 1.](https://github.com/zurbaevi/Java-Core.-Basic-level/tree/main/src/main/java/org/stepik/week1) Введение в Java
+* [Неделя 2.](https://github.com/zurbaevi/Java-Core.-Basic-level/tree/main/src/main/java/org/stepik/week2) Базовый синтаксис Java
+* [Неделя 3.](https://github.com/zurbaevi/Java-Core.-Basic-level/tree/main/src/main/java/org/stepik/week3) Объекты, классы и пакеты в Java
+* [Неделя 4.](https://github.com/zurbaevi/Java-Core.-Basic-level/tree/main/src/main/java/org/stepik/week4) Обработка ошибок, исключения, отладка
+* [Неделя 5.](https://github.com/zurbaevi/Java-Core.-Basic-level/tree/main/src/main/java/org/stepik/week5) Ввод-вывод, доступ к файловой системе
+* [Неделя 6.](https://github.com/zurbaevi/Java-Core.-Basic-level/tree/main/src/main/java/org/stepik/week6) Generics. Collections. Streams
 #### [Сертификат](https://stepik.org/cert/816209)
 ____
