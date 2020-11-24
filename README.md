@@ -17,7 +17,6 @@ ____
 Основной целью данного курса является ознакомление студентами с основами профессионального программирования с использованием языка Java.
 Данный курс пройдет для укрепление материала.
 
-## Основные темы курса:
 * [Неделя 1.](https://github.com/zurbaevi/Java-Core.-Basic-level/tree/main/src/main/java/org/stepik/week1) Введение в Java
 * [Неделя 2.](https://github.com/zurbaevi/Java-Core.-Basic-level/tree/main/src/main/java/org/stepik/week2) Базовый синтаксис Java
 * [Неделя 3.](https://github.com/zurbaevi/Java-Core.-Basic-level/tree/main/src/main/java/org/stepik/week3) Объекты, классы и пакеты в Java
