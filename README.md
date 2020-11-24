@@ -13,7 +13,7 @@
 * [Урок 8.](https://github.com/zurbaevi/Java-Core.-Basic-level/blob/main/src/main/java/ru/geekbrains/lesson8/Main.java) Написание приложения с графическим интерфейсом
 #### [Сертификат](https://geekbrains.ru/certificates/1018174)
 ____
-# Практикум на stepik
+# Дополнительные задачи:
 Основной целью данного курса является ознакомление студентами с основами профессионального программирования с использованием языка Java.
 Данный курс пройдет для укрепление материала.
 
@@ -24,5 +24,4 @@ ____
 * [Неделя 4.](https://github.com/zurbaevi/Java-Core.-Basic-level/tree/main/src/main/java/org/stepik/week4) Обработка ошибок, исключения, отладка
 * [Неделя 5.](https://github.com/zurbaevi/Java-Core.-Basic-level/tree/main/src/main/java/org/stepik/week5) Ввод-вывод, доступ к файловой системе
 * [Неделя 6.](https://github.com/zurbaevi/Java-Core.-Basic-level/tree/main/src/main/java/org/stepik/week6) Generics. Collections. Streams
-#### [Сертификат](https://stepik.org/cert/816209)
 ____
