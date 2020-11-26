@@ -15,7 +15,7 @@
 ____
 # Дополнительные задачи:
 Основной целью данного курса является ознакомление студентами с основами профессионального программирования с использованием языка Java.
-Данный курс пройдет для укрепление материала.
+Данный курс пройден для укрепление материала.
 
 * [Неделя 1.](https://github.com/zurbaevi/Java-Core.-Basic-level/tree/main/src/main/java/org/stepik/week1) Введение в Java
 * [Неделя 2.](https://github.com/zurbaevi/Java-Core.-Basic-level/tree/main/src/main/java/org/stepik/week2) Базовый синтаксис Java
