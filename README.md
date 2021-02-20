@@ -1,8 +1,11 @@
-# Практикум на GeekBrains
+___
+# I четверть
+___
+## Практикум на GeekBrains
 Основной целью данного курса является ознакомление студентами с основами профессионального программирования с использованием языка Java.
 Все выполненные задания публикуются на github ссылка на готовые задания отсылается преподавателю
 
-## Основные темы курса:
+### Основные темы курса:
 * [Урок 1.](https://github.com/zurbaevi/Java-Core.-Basic-level/blob/main/src/main/java/ru/geekbrains/lesson1/Main.java) Java. Введение
 * [Урок 2.](https://github.com/zurbaevi/Java-Core.-Basic-level/blob/main/src/main/java/ru/geekbrains/lesson2/Main.java) Основные конструкции
 * [Урок 3.](https://github.com/zurbaevi/Java-Core.-Basic-level/blob/main/src/main/java/ru/geekbrains/lesson3/Main.java) Практика
@@ -13,7 +16,7 @@
 * [Урок 8.](https://github.com/zurbaevi/Java-Core.-Basic-level/blob/main/src/main/java/ru/geekbrains/lesson8/Main.java) Написание приложения с графическим интерфейсом
 #### [Сертификат](https://geekbrains.ru/certificates/1018174)
 ____
-# Дополнительные задачи:
+## Дополнительные задачи:
 Данный курс пройден для укрепление материала.
 
 * [Неделя 1.](https://github.com/zurbaevi/Java-Core.-Basic-level/tree/main/src/main/java/org/stepik/week1) Введение в Java
