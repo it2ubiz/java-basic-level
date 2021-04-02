@@ -5,6 +5,9 @@ ___
 Основной целью данного курса является ознакомление студентами с основами профессионального программирования с использованием языка Java.
 Все выполненные задания публикуются на github ссылка на готовые задания отсылается преподавателю
 
+* 1 месяц, 8 уроков
+* 12 часов обучающего контента, 24 часа практики
+
 ### Основные темы курса:
 * [Урок 1.](https://github.com/zurbaevi/Java-Core.-Basic-level/blob/main/src/main/java/ru/geekbrains/lesson1/Main.java) Java. Введение
 * [Урок 2.](https://github.com/zurbaevi/Java-Core.-Basic-level/blob/main/src/main/java/ru/geekbrains/lesson2/Main.java) Основные конструкции
